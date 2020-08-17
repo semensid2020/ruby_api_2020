@@ -1,0 +1,164 @@
+{
+  "info": {
+    "_postman_id": "90caf8b0-6243-4b78-a44f-6ee4ed5421f1",
+    "name": "TICKETS_API_RUBY",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Нарушения (1 страница выдачи)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:7777/tickets",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "7777",
+          "path": [
+            "tickets"
+          ]
+        },
+        "description": "Вывод первых 10 нарушений (1 страницы) из базы (без применения фильтров по ФИО, госномеру ТС, названию штрафа)"
+      },
+      "response": []
+    },
+    {
+      "name": "2. Нарушения (3 страница выдачи)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:7777/tickets?page=3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "7777",
+          "path": [
+            "tickets"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "3"
+            }
+          ]
+        },
+        "description": "Вывод нарушений (третьей страницы) из базы (без применения фильтров по ФИО, госномеру ТС, названию штрафа)"
+      },
+      "response": []
+    },
+    {
+      "name": "3. Поиск по номеру ТС",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:7777/tickets?car_number=2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "7777",
+          "path": [
+            "tickets"
+          ],
+          "query": [
+            {
+              "key": "car_number",
+              "value": "2"
+            }
+          ]
+        },
+        "description": "Поиск по номеру автомобиля - частичное или полное совпадение"
+      },
+      "response": []
+    },
+    {
+      "name": "4. Поиск по фамилии",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:7777/tickets?surname=ким",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "7777",
+          "path": [
+            "tickets"
+          ],
+          "query": [
+            {
+              "key": "surname",
+              "value": "ким"
+            }
+          ]
+        },
+        "description": "Поиск по части фамилии - провести поиск по фамилиям, содержащим строку 'ким'"
+      },
+      "response": []
+    },
+    {
+      "name": "5. Поиск по части фамилии и имени",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:7777/tickets?surname=ов&first_name=а",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "7777",
+          "path": [
+            "tickets"
+          ],
+          "query": [
+            {
+              "key": "surname",
+              "value": "ов"
+            },
+            {
+              "key": "first_name",
+              "value": "а"
+            }
+          ]
+        },
+        "description": "Поиск по части фамилии. Можно, например, провести поиск по всем фамилиям, содержащим ОВ (Иванов(а), Овечкин(а)...), \nа также включить поиск по имени, например, имя должно содержать букву А."
+      },
+      "response": []
+    },
+    {
+      "name": "6. Поиск по номеру паспорта",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:7777/tickets?passport=1234",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "7777",
+          "path": [
+            "tickets"
+          ],
+          "query": [
+            {
+              "key": "passport",
+              "value": "1234"
+            }
+          ]
+        },
+        "description": "Поиск по номеру паспорта (в данном случае - его части)"
+      },
+      "response": []
+    }
+  ],
+  "protocolProfileBehavior": {}
+}
