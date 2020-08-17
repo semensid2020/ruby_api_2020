@@ -12,4 +12,8 @@ class Car < ApplicationRecord
   def self.searchable_attributes
     %i[car_number car_company car_model]
   end
+
+  def presented_as_json
+    self.as_json(except: %i[created_at updated_at id citizen_id])
+  end
 end

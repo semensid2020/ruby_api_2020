@@ -14,4 +14,8 @@ class Citizen < ApplicationRecord
   def self.searchable_attributes
     %i[first_name second_name surname passport]
   end
+
+  def presented_as_json
+    self.as_json(except: %i[created_at updated_at id])
+  end
 end
