@@ -46,7 +46,7 @@ class TicketsController < ApplicationController
 
     collection = classname.all
     classname.searchable_attributes.each do |sa|
-      collection = collection.where("#{sa} LIKE ?", '%' + classname.sanitize_sql_like(params[sa]) + '%') if params[sa]
+      collection = collection.where("#{sa} ILIKE ?", '%' + classname.sanitize_sql_like(params[sa]) + '%') if params[sa]
     end
 
     return [] if collection.blank?

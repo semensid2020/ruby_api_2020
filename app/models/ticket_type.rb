@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class TicketType < ApplicationRecord
-  include Downcasing
   has_many :tickets
 
   validates :penalty_size, presence: true

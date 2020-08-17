@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Car < ApplicationRecord
-  include Downcasing
   belongs_to :citizen
   has_and_belongs_to_many :tickets
 
