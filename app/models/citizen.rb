@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Citizen < ApplicationRecord
+  include Downcasing
   has_many :cars
 
   validates_uniqueness_of :passport
