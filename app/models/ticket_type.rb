@@ -4,7 +4,7 @@ class TicketType < ApplicationRecord
   has_many :tickets
 
   validates :penalty_size, presence: true
-  validates_format_of :ticket_name, :with => /[0-9A-zА-яЁё\s\-]+/, allow_blank: false
+  validates_format_of :ticket_name, :with => /\A[0-9А-яЁё\s\-]+\z/, allow_blank: false
 
   def self.searchable_attributes
     %i[ticket_name]

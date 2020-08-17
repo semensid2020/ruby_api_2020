@@ -30,7 +30,7 @@ Car.create([
 # Генерируем виды нарушений и размеры штрафов (6 видов)
 TicketType.create([
             { ticket_name: 'Управление незарегистрированным ТС',     penalty_size: 800 },
-            { ticket_name: 'Управление ТС c нечитаемыми знаками',    penalty_size: 500 },
+            { ticket_name: 'Управление ТС с нечитаемыми знаками',    penalty_size: 500 },
             { ticket_name: 'Управление ТС без номерных знаков',      penalty_size: 5000 },
             { ticket_name: 'Нелегальная перевозка пассажиров',       penalty_size: 5000 },
             { ticket_name: 'Передача ТС лицу без документов',        penalty_size: 3000 },
