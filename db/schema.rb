@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_08_16_123358) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "cars", force: :cascade do |t|
     t.string "car_number", null: false
     t.string "car_company", null: false
@@ -30,7 +33,7 @@ ActiveRecord::Schema.define(version: 2020_08_16_123358) do
   end
 
   create_table "citizens", force: :cascade do |t|
-    t.integer "passport", null: false
+    t.string "passport", null: false
     t.integer "sex", default: 0, null: false
     t.string "surname", null: false
     t.string "first_name", null: false
@@ -53,7 +56,7 @@ ActiveRecord::Schema.define(version: 2020_08_16_123358) do
   end
 
   create_table "tickets", force: :cascade do |t|
-    t.integer "ticket_number", null: false
+    t.string "ticket_number", null: false
     t.date "ticket_date", null: false
     t.integer "ticket_type_id", null: false
     t.datetime "created_at", precision: 6, null: false

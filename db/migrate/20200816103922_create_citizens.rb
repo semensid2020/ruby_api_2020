@@ -1,7 +1,7 @@
 class CreateCitizens < ActiveRecord::Migration[6.0]
   def change
     create_table :citizens do |t|
-      t.integer :passport, null: false, unique: true
+      t.string :passport, null: false, unique: true
       t.integer :sex, null: false, default: 0
       t.string :surname, null: false
       t.string :first_name, null: false
